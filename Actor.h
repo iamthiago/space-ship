@@ -1,8 +1,9 @@
 #ifndef SPACESHIP_2D_ACTOR_H
 #define SPACESHIP_2D_ACTOR_H
 
-#include "Game.h"
+#include <vector>
 #include "Component.h"
+#include "Math.h"
 
 class Actor {
 public:
@@ -25,6 +26,8 @@ public:
 
     // Any actor-specific update code (overridable)
     virtual void UpdateActor(float deltaTime);
+
+    State GetState() const { return mState; }
 
 private:
     // Actor's state

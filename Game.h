@@ -1,11 +1,9 @@
 #ifndef SPACESHIP_2D_GAME_H
 #define SPACESHIP_2D_GAME_H
 #include <SDL.h>
+#include <vector>
 
-struct Vector2 {
-    float x;
-    float y;
-};
+class Actor;
 
 class Game {
 public:
@@ -16,6 +14,10 @@ public:
     void RunLoop();
 
     void Shutdown();
+
+    void AddActor(Actor* actor);
+
+    void RemoveActor(Actor * actor);
 
 private:
     void ProcessInput();
@@ -31,6 +33,11 @@ private:
     bool mIsRunning;
 
     Uint32 mTicksCount;
+
+    // Actors
+    bool mUpdatingActors;
+    std::vector<class Actor*> mActors;
+    std::vector<class Actor*> mPendingActors;
 };
 
 #endif //SPACESHIP_2D_GAME_H
