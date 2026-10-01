@@ -8,7 +8,9 @@ find_package(SDL2_image REQUIRED)
 
 add_executable(spaceship_2d main.cpp
         Game.h
-        Game.cpp)
+        Game.cpp
+        Actor.h
+        Component.h)
 
 target_link_libraries(spaceship_2d PRIVATE SDL2::SDL2)
 target_link_libraries(spaceship_2d PRIVATE SDL2_image::SDL2_image)

@@ -2,6 +2,11 @@
 #define SPACESHIP_2D_GAME_H
 #include <SDL.h>
 
+struct Vector2 {
+    float x;
+    float y;
+};
+
 class Game {
 public:
     Game();
